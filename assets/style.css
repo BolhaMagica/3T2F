@@ -4,10 +4,15 @@
     margin: 0;
     padding: 0;
 }
-
+:root{
+    --cor-do-texto: #dbe4ef;
+    --cor-cartao-frente: #144480;
+    --cor-cartao-verso: #00f4bf;
+}
 body{
     background-color: bisque;
     font-family: 'Bai Jamjuree',sans-serif;
+    background-image: url(img/bg-desktop.webp);
 }
 footer{
     background-color: black;
@@ -23,25 +28,46 @@ footer p{
 }
 #container{
     display: flex;
+    flex-wrap: wrap;
 }
 .cartao{
     margin: 2rem;
     height: 20rem;
-    background-color: #741e36;
+    background-color: #697565;
+    border-radius: 15px;
 }
+.cartao:hover .cartao-conteudo{
+    transform: rotateY(180deg);
+}
+
 .cartao-conteudo{
     text-align: center;
     height: 100%;
-    background-color: #ffbed4;
-    border-radius: 0.6rem;
+    padding: 20px;
+    transform-style: preserve-3d;
+    transition: transform 600ms ease-in-out;
 }
 .cartao-conteudo h3{
-    background-color: #243642;
-    color: wheat;
+    background-color: #ECDFCC;
+    color: black;
     text-align: left;
     padding: 0.5rem;
     position: absolute;
     margin: 0.6rem;
     border-radius: 0.6rem;
     font-size: 1vw;
+    backface-visibility: hidden;
+}
+.cartao-conteudo-resposta{
+    color: var(--cor-do-texto);
+    font-weight: 500;
+}
+.cartao-conteudo-pergunta{
+    padding-top: 55px;
+    font-weight: 500;
+}
+.cartao-conteudo-pergunta,
+.cartao-conteudo-resposta{
+    backface-visibility: hidden;
+    margin: 1rem;
 }
